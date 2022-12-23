@@ -13,36 +13,80 @@ import Search from './components/Search'
 function App() {
   const [products, setProducts] = useState(data)
   const [basket, setBasket] = useState([])
+  const [count, setCount] = useState(0)
+  const [total, setTotal] = useState(0)
   
 
   function addToBasket(id){
     console.log(id)
     products.map(product => {
-      if(product.trackId === id){
-        console.log(product)
+      if(product.trackId === id || product.artistId === id && product.inBasket !== true){
+        // console.log(product)
         setBasket(prev => [...prev, product])
-        console.log('basket',basket)
-        product.inBasket= true
-      }})
+        // console.log('basket',basket)
+        product.inBasket= !product.inBasket
+        setCount(count + 1)
+        setTotal(total + product.trackPrice )
+      }
+      else if(product.trackId === id && product.inBasket === true) {
+        removeFromBasket(id)
+      }
+    })
+      
+      console.log(count)
   }
 
-  function removeFromBasket(){
+  function removeFromBasket(id){
+    // console.log(id)
+    const newData = []
+    basket.filter(product => {
+      if(product.trackId !== id || product.artistId !== id){
+        // console.log(product)
+        newData.push(product)
+      } else {
+        setTotal(total - product.trackPrice )
+        product.inBasket= !product.inBasket
+      }
+      
+    })
+    setBasket(newData)
+    setCount(count - 1)
+    // console.log(count)
+    
 
   }
 
-  function search(){
+  
 
-  }
+
+  async function findProducts(value){
+    const url = `https://itunes.apple.com/search?term=${value}&limit=10`
+  
+     // useEffect(() => {
+    //   updateBooks(currentPage)
+    // }, [currentPage])
+    const results = await fetch(url).then(res => res.json());
+    // console.log(value)
+    if(!results.error){
+      console.log(results)
+      setProducts(results.results)
+      // console.log(results.totalItems)
+
+
+    }
+  
+    }
+
 
 
   function Home() {
     const [keyword, setKeyword] = useState("")
     // console.log("This", books)
     return <>
-            <Header />
+            <Header itemCount={basket.length}/>
             <h2>Welcome to the Bookcase App</h2>
-            <Search />
-            <ProductList products={products} addToBasket={addToBasket} /> 
+            <Search keyword={keyword} setKeyword={setKeyword} findProducts={findProducts}/>
+            <ProductList products={products} location="library" addToBasket={addToBasket} /> 
           </>
     
   }
@@ -51,9 +95,10 @@ function App() {
   function BasketList() {
     // console.log("This", basket)
     return <>
-            <Header />
-            {console.log(basket)}
-            <Basket products={basket}/> 
+            <Header itemCount={basket.length}/>
+            {/* {console.log(basket)} */}
+            {/* {console.log('count', count)} */}
+            <Basket basket={basket} location='basket' removeFromBasket={removeFromBasket} basketCount={count} basketTotal={total} /> 
           </>
     
   }

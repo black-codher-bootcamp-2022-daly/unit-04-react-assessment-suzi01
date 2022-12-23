@@ -1,8 +1,10 @@
 import React from 'react'
 
-const BasketTotal = () => {
+const BasketTotal = (props) => {
   return (
-    <div>BasketTotal</div>
+    <div>
+      <h1>Total £{props.basketTotal === 0 ? `0.00` : `${props.basketTotal}`}</h1>
+    </div>
   )
 }
 
