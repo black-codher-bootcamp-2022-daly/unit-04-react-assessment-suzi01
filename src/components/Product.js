@@ -2,6 +2,7 @@ import React from 'react'
 
 const Product = ({media, addToBasket, location, removeFromBasket, inBasket}) => {
     const {artistName, trackName, trackPrice, trackId, kind, artworkUrl100, longDescription, artistId} = media
+    console.log(artistName)
   return <>
     <div>
         <h2>{trackName}</h2>

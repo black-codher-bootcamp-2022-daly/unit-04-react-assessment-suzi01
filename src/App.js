@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import './styles/App.css';
 import data from './models/data.json'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import About from './pages/About'
 import Basket from './components/Basket'
 import Header from './components/Header'
@@ -21,7 +21,8 @@ function App() {
   function addToBasket(id){
     console.log(id)
     products.map(product => {
-      if(product.trackId === id || product.artistId === id && product.inBasket !== true){
+      // if(product.trackId === id || product.artistId === id && product.inBasket !== true){
+      if(product.trackId === id && product.inBasket !== true){
         // console.log(product)
         setBasket(prev => [...prev, product])
         // console.log('basket',basket)
@@ -41,7 +42,8 @@ function App() {
     // console.log(id)
     const newData = []
     basket.filter(product => {
-      if(product.trackId !== id || product.artistId !== id){
+      // if(product.trackId !== id || product.artistId !== id){
+        if(product.trackId !== id){
         // console.log(product)
         newData.push(product)
       } else {
@@ -108,11 +110,16 @@ function App() {
   return <>
     <Router>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="basket" element={<BasketList />} />
-        <Route path="about" element={<About />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/basket" element={<BasketList />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
+    {/* <Router>
+      <Route exact path="/" render={() => (
+        <Header />
+      )} />
+    </Router> */}
     </>
 
 
