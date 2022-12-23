@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import './styles/App.css';
 import data from './models/data.json'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
@@ -15,6 +15,7 @@ function App() {
   const [basket, setBasket] = useState([])
   const [count, setCount] = useState(0)
   const [total, setTotal] = useState(0)
+  const [term, setTerm] = useState("")
   
 
   function addToBasket(id){
@@ -59,7 +60,7 @@ function App() {
   
 
 
-  async function findProducts(value){
+  async function search(value){
     const url = `https://itunes.apple.com/search?term=${value}&limit=10`
   
      // useEffect(() => {
@@ -80,12 +81,13 @@ function App() {
 
 
   function Home() {
-    const [keyword, setKeyword] = useState("")
+    const [term, setTerm] = useState("")
     // console.log("This", books)
     return <>
             <Header itemCount={basket.length}/>
             <h2>Welcome to the Bookcase App</h2>
-            <Search keyword={keyword} setKeyword={setKeyword} findProducts={findProducts}/>
+            {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
+            <Search term={term} setTerm={setTerm} search={search}/>
             <ProductList products={products} location="library" addToBasket={addToBasket} /> 
           </>
     
@@ -106,12 +108,14 @@ function App() {
   return <>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="basket" element={<BasketList />} />
         <Route path="about" element={<About />} />
       </Routes>
     </Router>
     </>
+
+
 
 }
 

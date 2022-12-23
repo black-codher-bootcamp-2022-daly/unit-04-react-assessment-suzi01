@@ -1,16 +1,16 @@
 import React from 'react'
 
 const Search = (props) => {
-  const {keyword, setKeyword, findproducts} = props
+  const {term, setTerm, findproducts} = props
   return <>
     <form id="searchAPI" style={{alignContent:'center', textAlign:"center", padding:"5px"}} onSubmit={(event) => {
             event.preventDefault()
-            props.findProducts(props.keyword)
+            props.search(props.term)
             }}>
         {/* <p style={{color:"red"}}><em>{keyword && 'Keywords Typed: ' + keyword}</em></p> */}
         <input id="term" style={{borderRadius:"15px", width:"60%"}} type="text" 
-            value={props.keyword} 
-            onChange={(e) => props.setKeyword(e.target.value)}>
+            value={props.term} 
+            onChange={(e) => props.setTerm(e.target.value)}>
         </input>
         <input style={{borderRadius:"5px", border:"solid 1px", marginLeft:"5px"}} type="submit" value="Search"  />
     </form>
