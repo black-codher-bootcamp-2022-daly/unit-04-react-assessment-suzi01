@@ -20,7 +20,9 @@ function App() {
     products.map(product => {
       if(product.trackId === id){
         console.log(product)
-        setBasket(prev => [...prev + product])
+        setBasket(prev => [...prev, product])
+        console.log('basket',basket)
+        product.inBasket= true
       }})
   }
 
@@ -47,7 +49,7 @@ function App() {
 
 
   function BasketList() {
-    console.log("This", basket)
+    // console.log("This", basket)
     return <>
             <Header />
             {console.log(basket)}

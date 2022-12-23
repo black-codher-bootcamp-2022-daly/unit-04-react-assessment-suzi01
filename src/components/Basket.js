@@ -5,12 +5,12 @@ import ProductList from './ProductList'
 import Product from './Product'
 
 const Basket = (products, ...props) => {
-    console.log(products)
-    console.log(props)
+    console.log('products', products)
+    console.log('props',props)
   return <>
     <BasketTotal />
     <BasketCount />
-    {/* {products.map(product => <Product key={product.id} media={product} addToBasket={props.addToBasket}/>)} */}
+    {/* {products.length !== 0 && products.map(product => <Product key={product.id} media={product} addToBasket={props.addToBasket}/>)} */}
   </>
     
   
