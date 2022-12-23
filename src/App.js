@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './styles/App.css';
-import data from './models/example-data.json'
+import data from './models/data.json'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import About from './pages/About'
 import Basket from './components/Basket'
@@ -103,7 +103,7 @@ function App() {
     
   }
 
-  return <div>
+  return <>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -111,7 +111,7 @@ function App() {
         <Route path="about" element={<About />} />
       </Routes>
     </Router>
-    </div>
+    </>
 
 }
 
