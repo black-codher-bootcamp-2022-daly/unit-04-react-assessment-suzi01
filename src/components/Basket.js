@@ -17,7 +17,9 @@ const Basket = ({basket, ...props}) => {
     <BasketCount />    */}
     {/* {products.length !== 0 && products.map(product => <Product key={product.id} media={product} addToBasket={props.addToBasket}/>)} */}
     {/* {basket.length ===0 ? 'Sorry, no items in basket' : <Product location="basket" products={basket} />} */}
-    {basket.length ===0 ? 'Sorry, no items in basket' : basket.map(basketItem => <Product location ={location} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />)}
+    {basket.length === 0 ? 'Sorry, no items in basket...' : basket.map(basketItem =>
+      <Product location ={location} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />
+     )}
     <BasketTotal basketTotal={props.basketTotal}/>
   </>
     

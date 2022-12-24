@@ -14,15 +14,15 @@ function App() {
   const [products, setProducts] = useState(data)
   const [basket, setBasket] = useState([])
   const [count, setCount] = useState(0)
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0.00)
   const [term, setTerm] = useState("")
   
 
   function addToBasket(id){
     console.log(id)
     products.map(product => {
-      // if(product.trackId === id || product.artistId === id && product.inBasket !== true){
-      if(product.trackId === id && product.inBasket !== true){
+      if((product.trackId === id  && product.inBasket !== true) || (product.artistId === id && product.inBasket !== true)){
+      // if(product.trackId === id && product.inBasket !== true){
         // console.log(product)
         setBasket(prev => [...prev, product])
         // console.log('basket',basket)
@@ -30,33 +30,44 @@ function App() {
         setCount(count + 1)
         setTotal(total + product.trackPrice )
       }
-      else if(product.trackId === id && product.inBasket === true) {
+      else if((product.trackId === id && product.inBasket === true) || (product.artistId === id && product.inBasket === true)) {
         removeFromBasket(id)
       }
     })
-      
-      console.log(count)
   }
+
+  function removeFromBasketByArtistId(id){
+    // console.log(id)
+    const newData = []
+    basket.filter(product => {
+      if(product.artistId !== id){
+        // if(product.trackId !== id){
+        console.log('product', product)
+        console.log('artistId', product.artistId)
+        newData.push(product)
+      }}
+      )
+  }
+
 
   function removeFromBasket(id){
     // console.log(id)
     const newData = []
     basket.filter(product => {
-      // if(product.trackId !== id || product.artistId !== id){
-        if(product.trackId !== id){
-        // console.log(product)
+      // if(product.trackId !== id){
+        if(product.id && product.trackId !== id){
+        console.log('product', product)
+        console.log('product', product.artistId)
         newData.push(product)
       } else {
+        removeFromBasketByArtistId(id)
         setTotal(total - product.trackPrice )
         product.inBasket= !product.inBasket
       }
-      
     })
     setBasket(newData)
     setCount(count - 1)
     // console.log(count)
-    
-
   }
 
   
@@ -90,7 +101,7 @@ function App() {
             <h2>Welcome to the Bookcase App</h2>
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
             <Search term={term} setTerm={setTerm} search={search}/>
-            <ProductList items={products} location="library" addToBasket={addToBasket} /> 
+            <ProductList items={products}  addToBasket={addToBasket} /> 
           </>
     
   }

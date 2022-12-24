@@ -33,16 +33,16 @@ const Product = ({
         {kind !== "song" && (
           <p>
             {longDescription
-              ? `${longDescription.substring(0, 500)}... `
-              : `No description available`}
+              && `${longDescription.substring(0, 500)}... `}
           </p>
         )}
-        {location === "library" ? (
+        {location === "basket" ? (
+          <button onClick={() => removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
+          
+        ) : (
           <button onClick={() => addToBasket(trackId ? trackId : artistId)}>
             {inBasket ? "Remove" : "Add to Basket"}
           </button>
-        ) : (
-          <button onClick={() => removeFromBasket(trackId)}>Remove</button>
         )}
       </div>
     </>
@@ -50,7 +50,7 @@ const Product = ({
 };
 
 Product.propTypes = {
-  item: PropTypes.shape({
+  items: PropTypes.shape({
     artistName: PropTypes.string.isRequired,
     trackName: PropTypes.string.isRequired,
     trackPrice: PropTypes.number.isRequired,
