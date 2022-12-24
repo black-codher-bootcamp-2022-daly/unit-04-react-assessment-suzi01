@@ -4,16 +4,20 @@ import BasketTotal from './BasketTotal'
 import Product from './Product'
 
 const Basket = ({basket, ...props}) => {
-    console.log('basket', basket)
-    console.log('props',props)
+  const {location, basketCount, basketTotal, removeFromBasket} = props
+  // const { basketTotal} = total
+    // console.log('basket', basket)
+    console.log('props',location)
+    // console.log(total)
   return <>
-    <BasketCount basketCount={props.basketCount}/>
+    <BasketCount basketCount={basketCount} />
+    <BasketTotal basketTotal={basketTotal} />
     {/* {props.location !== "library"} */}
     {/* <BasketTotal />
     <BasketCount />    */}
     {/* {products.length !== 0 && products.map(product => <Product key={product.id} media={product} addToBasket={props.addToBasket}/>)} */}
     {/* {basket.length ===0 ? 'Sorry, no items in basket' : <Product location="basket" products={basket} />} */}
-    {basket.length ===0 ? 'Sorry, no items in basket' : basket.map(basketItem => <Product location ="basket" key={basketItem.trackId} media={basketItem} removeFromBasket={props.removeFromBasket} />)}
+    {basket.length ===0 ? 'Sorry, no items in basket' : basket.map(basketItem => <Product location ={location} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />)}
     <BasketTotal basketTotal={props.basketTotal}/>
   </>
     

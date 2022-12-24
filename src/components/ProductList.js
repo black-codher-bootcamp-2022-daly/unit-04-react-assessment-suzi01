@@ -1,12 +1,12 @@
 import React from 'react'
 import Product from './Product'
 
-const ProductList = ({products, ...props}) => {
+const ProductList = ({items, ...props}) => {
   console.log(props)
   return <>
     {/* items={items}
     addToBasket={addToBasket} */}
-    {products.map(product => <Product location="library" key={product.trackId ? product.trackId : product.artistId} media={product} addToBasket={props.addToBasket} inBasket={product.inBasket}/>)}
+    {items.map(item => <Product location="library" key={item.trackId ? item.trackId : item.artistId} item={item} addToBasket={props.addToBasket} inBasket={item.inBasket}/>)}
   </>
     
   

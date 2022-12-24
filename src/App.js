@@ -90,7 +90,7 @@ function App() {
             <h2>Welcome to the Bookcase App</h2>
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
             <Search term={term} setTerm={setTerm} search={search}/>
-            <ProductList products={products} location="library" addToBasket={addToBasket} /> 
+            <ProductList items={products} location="library" addToBasket={addToBasket} /> 
           </>
     
   }
@@ -115,11 +115,6 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
-    {/* <Router>
-      <Route exact path="/" render={() => (
-        <Header />
-      )} />
-    </Router> */}
     </>
 
 
