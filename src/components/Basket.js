@@ -12,13 +12,13 @@ const Basket = ({basket, ...props}) => {
   return <>
     <BasketCount basketCount={basketCount} />
     <BasketTotal basketTotal={basketTotal} />
-    {/* {props.location !== "library"} */}
+    {/* {props.inBasket === true} */}
     {/* <BasketTotal />
     <BasketCount />    */}
     {/* {products.length !== 0 && products.map(product => <Product key={product.id} media={product} addToBasket={props.addToBasket}/>)} */}
     {/* {basket.length ===0 ? 'Sorry, no items in basket' : <Product location="basket" products={basket} />} */}
     {basket.length === 0 ? 'Sorry, no items in basket...' : basket.map(basketItem =>
-      <Product location ={location} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />
+      <Product inBasket={true} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />
      )}
     <BasketTotal basketTotal={props.basketTotal}/>
   </>
