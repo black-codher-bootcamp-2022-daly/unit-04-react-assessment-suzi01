@@ -4,7 +4,7 @@ const BasketTotal = (props) => {
   console.log('total',props)
   return (
     <div>
-      <h1>Total £{props.basketTotal === 0 ? `0.00` : `${props.basketTotal}`}</h1>
+      <div>{props.basketTotal}</div>
     </div>
   )
 }

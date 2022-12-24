@@ -18,6 +18,7 @@ function App() {
   const [term, setTerm] = useState("")
   
 
+  console.log(products.length)
   function addToBasket(id){
     console.log(id)
     products.map(product => {

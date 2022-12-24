@@ -19,7 +19,7 @@ const Basket = ({basket, ...props}) => {
     {/* {products.length !== 0 && products.map(product => <Product key={product.id} media={product} addToBasket={props.addToBasket}/>)} */}
     {/* {basket.length ===0 ? 'Sorry, no items in basket' : <Product location="basket" products={basket} />} */}
     {basket.map(basketItem =>
-      <Product inBasket={true} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />
+      <Product location={location} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />
      )}
     <BasketTotal basketTotal={props.basketTotal}/>
   </>
