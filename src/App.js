@@ -30,9 +30,9 @@ function App() {
         setCount(count + 1)
         setTotal(total + product.trackPrice )
       }
-      else if((product.trackId === id && product.inBasket === true) || (product.artistId === id && product.inBasket === true)) {
-        removeFromBasket(id)
-      }
+      // else if((product.trackId === id && product.inBasket === true) || (product.artistId === id && product.inBasket === true)) {
+      //   removeFromBasket(id)
+      // }
     })
   }
 
@@ -101,7 +101,7 @@ function App() {
             <h2>Welcome to the Bookcase App</h2>
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
             <Search term={term} setTerm={setTerm} search={search}/>
-            <ProductList items={products}  addToBasket={addToBasket} /> 
+            <ProductList items={products}  addToBasket={addToBasket} removeFromBasket={removeFromBasket}/> 
           </>
     
   }

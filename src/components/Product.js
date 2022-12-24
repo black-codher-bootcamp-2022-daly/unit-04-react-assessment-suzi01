@@ -36,14 +36,15 @@ const Product = ({
               && `${longDescription.substring(0, 500)}... `}
           </p>
         )}
-        {location === "basket" ? (
+        {/* {location === "basket" ? ( */}
           <button onClick={() => removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
           
-        ) : (
-          <button onClick={() => addToBasket(trackId ? trackId : artistId)}>
+        {/* ) : ( */}
+          {/* <button onClick={() => addToBasket(trackId ? trackId : artistId)}>
             {inBasket ? "Remove" : "Add to Basket"}
-          </button>
-        )}
+          </button> */}
+          <button onClick={() => addToBasket(trackId ? trackId : artistId)}>Add to Basket</button>
+        {/* )} */}
       </div>
     </>
   );
