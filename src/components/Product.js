@@ -36,7 +36,7 @@ const Product = ({
               && `${longDescription.substring(0, 500)}... `}
           </p>
         )}
-        {location !== "basket" ? (
+        {inBasket !== true ? (
           <button onClick={() => addToBasket(trackId ? trackId : artistId)}>
             {inBasket ? "Remove" : "Add to Basket"}
           </button>

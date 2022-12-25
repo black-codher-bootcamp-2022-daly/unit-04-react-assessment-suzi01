@@ -17,8 +17,6 @@ function App() {
   const [total, setTotal] = useState(0)
   const [term, setTerm] = useState("")
   
-
-  console.log(products.length)
   function addToBasket(id){
     console.log(id)
     products.map(product => {
@@ -27,13 +25,13 @@ function App() {
         // console.log(product)
         setBasket(prev => [...prev, product])
         // console.log('basket',basket)
-        product.inBasket= !product.inBasket
+        product.inBasket= true
         setCount(count + 1)
         setTotal(total + product.trackPrice )
       }
-      else if((product.trackId === id && product.inBasket === true) || (product.artistId === id && product.inBasket === true)) {
-        removeFromBasket(id)
-      }
+      // else if((product.trackId === id && product.inBasket === true) || (product.artistId === id && product.inBasket === true)) {
+      //   removeFromBasket(id)
+      // }
     })
       
       console.log(count)
@@ -43,7 +41,7 @@ function App() {
     // console.log(id)
     const newData = []
     basket.filter(product => {
-      if(product.artistId !== id){
+      if(!product.trackId && product.artistId !== id){
         // if(product.trackId !== id){
         console.log('product', product)
         console.log('artistId', product.artistId)
@@ -53,23 +51,26 @@ function App() {
     }
 
   function removeFromBasket(id){
-    // console.log(id)
+    console.log(id)
     const newData = []
     basket.filter(product => {
       // if(product.trackId !== id){
-        if(product.id && product.trackId !== id){
+        if(product.trackId && product.trackId !== id){
         console.log('product', product)
         console.log('product', product.artistId)
         newData.push(product)
-      } else {
+        
+        }
+    else {
         removeFromBasketByArtistId(id)
         setTotal(total - product.trackPrice )
         product.inBasket= !product.inBasket
+        console.log("hello")
       }
     })
     setBasket(newData)
     setCount(count - 1)
-    // console.log(count)
+    // // console.log(count)
   }
 
   
@@ -103,7 +104,7 @@ function App() {
             <h2>Welcome to the Bookcase App</h2>
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
             <Search term={term} setTerm={setTerm} search={search}/>
-            {products.length === 0 ? 'Sorry, no items in basket...' : <ProductList items={products} location="library" addToBasket={addToBasket} />} 
+            {products.length === 0 ? 'Sorry, no items in basket...' : <ProductList items={products} location="library" addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>} 
           </>
     
   }
@@ -115,7 +116,7 @@ function App() {
             <Header itemCount={basket.length}/>
             {/* {console.log(basket)} */}
             {/* {console.log('count', count)} */}
-            { <Basket basket={basket} location='basket' removeFromBasket={removeFromBasket} basketCount={count} basketTotal={total} addToBasket={null}/> }
+            { <Basket basket={basket} location='basket' removeFromBasket={removeFromBasket} basketCount={count} basketTotal={total} /> }
           </>
     
   }
