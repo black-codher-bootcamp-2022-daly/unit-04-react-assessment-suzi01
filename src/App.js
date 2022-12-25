@@ -115,7 +115,7 @@ function App() {
             <Header itemCount={basket.length}/>
             {/* {console.log(basket)} */}
             {/* {console.log('count', count)} */}
-            { <Basket basket={basket} location='basket' removeFromBasket={removeFromBasket} basketCount={count} basketTotal={total} /> }
+            { <Basket basket={basket} location='basket' removeFromBasket={removeFromBasket} basketCount={count} basketTotal={total} addToBasket={null}/> }
           </>
     
   }
