@@ -7,7 +7,7 @@ const Basket = ({basket, ...props}) => {
   const {location, basketCount, basketTotal, removeFromBasket} = props
   // const { basketTotal} = total
     // console.log('basket', basket)
-    console.log('props',props)
+    console.log('props',basketTotal)
     // console.log(total)
   return <>
     <h1>Total £{basketTotal === 0 ? `0.00` : <BasketTotal basketTotal={basketTotal} />}</h1>

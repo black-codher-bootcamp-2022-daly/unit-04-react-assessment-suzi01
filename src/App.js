@@ -14,7 +14,7 @@ function App() {
   const [products, setProducts] = useState(data)
   const [basket, setBasket] = useState([])
   const [count, setCount] = useState(0)
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(1)
   const [term, setTerm] = useState("")
   
   function addToBasket(id){
