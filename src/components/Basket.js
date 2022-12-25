@@ -7,7 +7,7 @@ const Basket = ({basket, ...props}) => {
   const {location, basketCount, basketTotal, removeFromBasket} = props
   // const { basketTotal} = total
     // console.log('basket', basket)
-    console.log('props',location)
+    // console.log('props',location)
     // console.log(total)
   return <>
     <h1>Total £{basketTotal === 0 ? `0.00` : <BasketTotal basketTotal={basketTotal} />}</h1>
@@ -21,7 +21,7 @@ const Basket = ({basket, ...props}) => {
     {basket.length ===0 ? 'Sorry, no items in basket' : basket.map(basketItem =>
       <Product location={location} key={basketItem.trackId} item={basketItem} removeFromBasket={removeFromBasket} />
      )}
-    <BasketTotal basketTotal={props.basketTotal}/>
+   
   </>
     
   
