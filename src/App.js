@@ -15,7 +15,7 @@ function App() {
   const [products, setProducts] = useState(data)
   const [basket, setBasket] = useState([])
   const [count, setCount] = useState(0)
-  const [total, setTotal] = useState(1)
+  const [total, setTotal] = useState(0)
   const [term, setTerm] = useState("")
   
   function addToBasket(id){
@@ -104,6 +104,7 @@ function App() {
     const [term, setTerm] = useState("")
     // console.log("This", books)
     return <>
+            <h1>Media Store</h1>
             <Header itemCount={<BasketCount basketCount={basket.length} />}/>
             <h2>Welcome to the Bookcase App</h2>
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
@@ -117,6 +118,7 @@ function App() {
   function BasketList() {
     // console.log("This", basket)
     return <>
+            <h1>Media Store</h1>
             <Header itemCount={<BasketCount basketCount={basket.length} />}/>
             {/* {console.log(basket)} */}
             {/* {console.log('count', count)} */}
