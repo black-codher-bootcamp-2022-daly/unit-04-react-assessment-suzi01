@@ -17,6 +17,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [total, setTotal] = useState(0)
   const [term, setTerm] = useState("")
+  const [inBasket, setInBasket] = useState(false)
 
   // const basket1 = [{
   //   "wrapperType": "track",
@@ -150,7 +151,7 @@ function App() {
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
             <Search term={term} setTerm={setTerm} search={search}/>
             {products.length === 0 && 'Sorry, no items in basket...' } 
-            <ProductList items={products} location="library" addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>
+            <ProductList items={products} addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>
           </>
     
   }
