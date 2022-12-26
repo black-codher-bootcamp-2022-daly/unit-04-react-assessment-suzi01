@@ -21,7 +21,7 @@ const Product = ({
   // console.log(artistName)
   return (
     <>
-      <div>
+
         <h2>{trackName}</h2>
         <h2>{artistName}</h2>
         {trackPrice ? <p>£{trackPrice}</p> : <p>No price available</p>}
@@ -43,7 +43,7 @@ const Product = ({
         ) : (
           <button onClick={() => removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
         )}
-      </div>
+
     </>
   );
 };
