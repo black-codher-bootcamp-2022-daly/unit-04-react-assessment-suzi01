@@ -7,6 +7,7 @@ import Basket from './components/Basket'
 import Header from './components/Header'
 import ProductList from './components/ProductList'
 import Search from './components/Search'
+import BasketCount from './components/BasketCount';
 
 
 
@@ -32,6 +33,7 @@ function App() {
       // else if((product.trackId === id && product.inBasket === true) || (product.artistId === id && product.inBasket === true)) {
       //   removeFromBasket(id)
       // }
+      return product
     })
       
       console.log(count)
@@ -46,8 +48,10 @@ function App() {
         console.log('product', product)
         console.log('artistId', product.artistId)
         newData.push(product)
-      }}
-      )
+      }
+      return product
+       })
+      
     }
 
   function removeFromBasket(id){
@@ -100,7 +104,7 @@ function App() {
     const [term, setTerm] = useState("")
     // console.log("This", books)
     return <>
-            <Header itemCount={basket.length}/>
+            <Header itemCount={<BasketCount basketCount={basket.length} />}/>
             <h2>Welcome to the Bookcase App</h2>
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
             <Search term={term} setTerm={setTerm} search={search}/>
@@ -113,7 +117,7 @@ function App() {
   function BasketList() {
     // console.log("This", basket)
     return <>
-            <Header itemCount={basket.length}/>
+            <Header itemCount={<BasketCount basketCount={basket.length} />}/>
             {/* {console.log(basket)} */}
             {/* {console.log('count', count)} */}
             { <Basket basket={basket} location='basket' removeFromBasket={removeFromBasket} basketCount={count} basketTotal={total} /> }
