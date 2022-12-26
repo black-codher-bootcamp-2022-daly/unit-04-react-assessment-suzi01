@@ -2,11 +2,13 @@ import React from "react";
 import Product from "./Product";
 
 const ProductList = ({ items, ...props }) => {
-  // console.log(props)
+  // console.log(props.location)
   return (
     <>
       {/* items={items}
     addToBasket={addToBasket} */}
+      {/* {console.log(item)} */}
+      
       {items.length === 0
         ? <div className="empty">No items found...</div>
         : items.map((item) => (
@@ -14,9 +16,10 @@ const ProductList = ({ items, ...props }) => {
             <Product
               key={item.trackId ? item.trackId : item.artistId}
               item={item}
+              inBasket={item.inBasket}
               addToBasket={props.addToBasket}
               removeFromBasket={props.removeFromBasket}
-              inBasket={item.inBasket}
+              
             />
             </div>
           ))}

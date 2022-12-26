@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Product = ({
-  item,
-  addToBasket,
-  location,
-  removeFromBasket,
-  inBasket,
+  // item,
+  // addToBasket,
+  // location,
+  // removeFromBasket,
+  // inBasket,
+  item, ...props
 }) => {
   const {
     artistName,
@@ -18,7 +19,7 @@ const Product = ({
     longDescription,
     artistId,
   } = item;
-  // console.log(artistName)
+  // console.log('products', props)
   return (
     <>
 
@@ -36,12 +37,13 @@ const Product = ({
               && `${longDescription.substring(0, 500)}... `}
           </p>
         )}
-        {inBasket !== true ? (
-          <button onClick={() => addToBasket(trackId ? trackId : artistId)}>
-            {inBasket ? "Remove" : "Add to Basket"}
+        {props.inBasket !== true ? (
+          <button onClick={() => props.addToBasket(trackId ? trackId : artistId)}>
+            {/* {props.inBasket ? "Remove" : "Add to Basket"} */}
+            Add to Basket
           </button>
         ) : (
-          <button onClick={() => removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
+          <button onClick={() => props.removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
         )}
 
     </>
