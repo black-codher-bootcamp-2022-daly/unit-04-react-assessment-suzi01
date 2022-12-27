@@ -63,8 +63,9 @@ function App() {
       // if(product.trackId === id && product.inBasket !== true){
         // console.log(product)
         setBasket(prev => [...prev, product])
-        // console.log('basket',product.inbasket)
+        // console.log('basket',product)
         product.inBasket= true
+        // console.log(product.inBasket)
         setCount(count + 1)
         setTotal(total + product.trackPrice )
       }
@@ -151,7 +152,7 @@ function App() {
             {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
             <Search term={term} setTerm={setTerm} search={search}/>
             {products.length === 0 && 'Sorry, no items in basket...' } 
-            <ProductList items={products} addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>
+            <ProductList items={products} location="library" addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>
           </>
     
   }

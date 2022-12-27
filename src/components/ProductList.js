@@ -2,7 +2,7 @@ import React from "react";
 import Product from "./Product";
 
 const ProductList = ({ items, ...props }) => {
-  // console.log(props.inBasket)
+  // console.log(items.inBasket)
   return (
     <>
       {/* items={items}
@@ -13,15 +13,15 @@ const ProductList = ({ items, ...props }) => {
         ? <div className="empty">No items found...</div>
         : items.map((item) => (
           <div className="product" key={item.trackId ? item.trackId : item.artistId}>
-            {/* {} */}
             <Product
               key={item.trackId ? item.trackId : item.artistId}
               item={item}
-              inBasket={!item.inBasket ? item.inBasket = false : item.inBasket}
+
+              // inBasket={item.inBasket}
               addToBasket={props.addToBasket}
               removeFromBasket={props.removeFromBasket}
             />
-            {console.log(item.inBasket)}
+            {/* {console.log('location',item.location)} */}
             </div>
           ))}
     </>

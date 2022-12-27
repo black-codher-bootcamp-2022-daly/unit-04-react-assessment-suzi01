@@ -18,6 +18,7 @@ const Product = ({
     artworkUrl100,
     longDescription,
     artistId,
+    inBasket
   } = item;
   // console.log('products', props)
   return (
@@ -37,7 +38,7 @@ const Product = ({
               && `${longDescription.substring(0, 500)}... `}
           </p>
         )}
-        {props.inBasket !== true ? (
+        {inBasket !== true ? (
           <button onClick={() => props.addToBasket(trackId ? trackId : artistId)}>
             {/* {props.inBasket ? "Remove" : "Add to Basket"} */}
             Add to Basket
