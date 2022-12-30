@@ -13,7 +13,7 @@ const ProductList = ({ items, ...props }) => {
       {items.length === 0
         ? <div className="empty">No items found...</div>
         : items.map((item) => (
-          
+          <div className="product" key={item.trackId ? item.trackId : item.artistId}>
             <Product
               key={item.trackId ? item.trackId : item.artistId}
               item={item}
@@ -22,8 +22,8 @@ const ProductList = ({ items, ...props }) => {
               addToBasket={props.addToBasket}
               removeFromBasket={props.removeFromBasket}
             />
-            
-           
+            {/* {console.log('location',item.location)} */}
+            </div>
           ))}
     </>
   );

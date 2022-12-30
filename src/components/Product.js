@@ -22,7 +22,7 @@ const Product = ({
   } = item;
   // console.log('products', props)
   return (
-      <div className="product">
+      <>
       <img
           src={artworkUrl100}
           alt={trackName}
@@ -49,7 +49,7 @@ const Product = ({
           <button className="close-button" onClick={() => props.removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
         )}
         </div>
-</div>
+</>
   );
 };
 
