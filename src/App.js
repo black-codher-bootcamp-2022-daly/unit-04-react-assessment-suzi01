@@ -140,10 +140,10 @@ function App() {
   
     }
 
-    useEffect(() => {
-      <Header />
-      console.log("a-tags ", document.querySelectorAll('a'))
-    });
+    // useEffect(() => {
+    //   <Header />
+    //   console.log("a-tags ", document.querySelectorAll('a'))
+    // });
 
 
 
