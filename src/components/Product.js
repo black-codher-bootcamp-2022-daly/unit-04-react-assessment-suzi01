@@ -22,32 +22,34 @@ const Product = ({
   } = item;
   // console.log('products', props)
   return (
-    <>
-
-        <h2>{trackName}</h2>
-        <h2>{artistName}</h2>
-        {trackPrice ? <p>£{trackPrice}</p> : <p>No price available</p>}
-        <img
-          style={{ width: "120px", height: "170px", marginTop: "16px" }}
+      <div className="product">
+      <img
           src={artworkUrl100}
           alt={trackName}
         ></img>
+        <div className="item-details">
+        <h2>{trackName}</h2>
+        <h2>{artistName}</h2>
+        {trackPrice ? <p>£{trackPrice}</p> : <p>No price available</p>}
+        
         {kind !== "song" && (
-          <p>
+          <p className="long-description">
             {longDescription
               && `${longDescription.substring(0, 500)}... `}
           </p>
         )}
+        </div>
+        <div className="buttons">
         {inBasket !== true ? (
-          <button onClick={() => props.addToBasket(trackId ? trackId : artistId)}>
+          <button className="add-button" onClick={() => props.addToBasket(trackId ? trackId : artistId)}>
             {/* {props.inBasket ? "Remove" : "Add to Basket"} */}
             Add to Basket
           </button>
         ) : (
-          <button onClick={() => props.removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
+          <button className="close-button" onClick={() => props.removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
         )}
-
-    </>
+        </div>
+</div>
   );
 };
 

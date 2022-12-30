@@ -16,7 +16,6 @@ function App() {
   const [basket, setBasket] = useState([])
   const [count, setCount] = useState(0)
   const [total, setTotal] = useState(0)
-  const [term, setTerm] = useState("")
 
 
   // const basket1 = [{
@@ -151,9 +150,8 @@ function App() {
     const [term, setTerm] = useState("")
     // console.log("This", books)
     return <>
-    
+    <h1 className='title'>Media Store</h1>
     <Header itemCount={<BasketCount basketCount={basket.length} />}/>
-    <h2>Welcome to the Bookcase App</h2>
     {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
     <Search term={term} setTerm={setTerm} search={search}/>
     {products.length === 0 && 'Sorry, no items in basket...' } 
@@ -166,7 +164,7 @@ function App() {
   function BasketList() {
     // console.log("This", basket)
     return <>
-            <h1>Media Store</h1>
+            <h1 className='title'>Media Store</h1>
             <Header itemCount={<BasketCount basketCount={basket.length} />}/>
             {/* {console.log(basket)} */}
             {/* {console.log('count', count)} */}
@@ -177,11 +175,13 @@ function App() {
 
   return <>
     <Router>
+      <div className='container'>
       <Routes>
         <Route exact path="/" element={<Home /> } />
         <Route path="/basket" element={<BasketList />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      </div>
     </Router>
     </>
 
