@@ -17,7 +17,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [total, setTotal] = useState(0)
   const [term, setTerm] = useState("")
-  const [inBasket, setInBasket] = useState(false)
+
 
   // const basket1 = [{
   //   "wrapperType": "track",
