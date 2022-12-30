@@ -8,9 +8,11 @@ describe("Header functionality", () => {
   test('Displays header', () => {
     const count = 0;
     render(<BrowserRouter>
+    <Routes>
       <Route exact path="/" element={() => (
         <Header basketCount={count} />
       )} />
+      </Routes>
     </BrowserRouter>);
     expect(document.querySelectorAll("a").length).toBeGreaterThanOrEqual(3);
   });
