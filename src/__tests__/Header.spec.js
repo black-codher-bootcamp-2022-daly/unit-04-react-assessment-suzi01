@@ -7,11 +7,11 @@ import Header from '../components/Header';
 describe("Header functionality", () => {
   test('Displays header', () => {
     const count = 0;
-    render(<Routes>
+    render(<BrowserRouter>
       <Route exact path="/" element={() => (
         <Header basketCount={count} />
       )} />
-    </Routes>);
+    </BrowserRouter>);
     expect(document.querySelectorAll("a").length).toBeGreaterThanOrEqual(3);
   });
 });
