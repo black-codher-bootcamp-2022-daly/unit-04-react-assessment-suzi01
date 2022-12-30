@@ -13,7 +13,7 @@ const Basket = ({ basket, ...props }) => {
     <>
       <h1>Basket</h1>
       <BasketCount basketCount={basketCount} />
-      {console.log(document.querySelectorAll('.product').length)}
+      {/* {console.log(document.querySelectorAll('.product').length)} */}
       <br />
       {/* <BasketTotal basketTotal={basketTotal} /> */}
       {/* {props.inBasket === true} */}

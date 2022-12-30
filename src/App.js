@@ -140,20 +140,25 @@ function App() {
   
     }
 
+    useEffect(() => {
+      <Header />
+      console.log("a-tags ", document.querySelectorAll('a'))
+    });
+
 
 
   function Home() {
     const [term, setTerm] = useState("")
     // console.log("This", books)
     return <>
-            <h1>Media Store</h1>
-            <Header itemCount={<BasketCount basketCount={basket.length} />}/>
-            <h2>Welcome to the Bookcase App</h2>
-            {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
-            <Search term={term} setTerm={setTerm} search={search}/>
-            {products.length === 0 && 'Sorry, no items in basket...' } 
-            <ProductList items={products} location="library" addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>
-          </>
+    
+    <Header itemCount={<BasketCount basketCount={basket.length} />}/>
+    <h2>Welcome to the Bookcase App</h2>
+    {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
+    <Search term={term} setTerm={setTerm} search={search}/>
+    {products.length === 0 && 'Sorry, no items in basket...' } 
+    <ProductList items={products} location="library" addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>
+  </>
     
   }
 
@@ -173,7 +178,7 @@ function App() {
   return <>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home /> } />
         <Route path="/basket" element={<BasketList />} />
         <Route path="/about" element={<About />} />
       </Routes>

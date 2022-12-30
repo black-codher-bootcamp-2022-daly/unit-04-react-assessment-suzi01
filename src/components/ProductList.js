@@ -9,6 +9,7 @@ const ProductList = ({ items, ...props }) => {
     addToBasket={addToBasket} */}
       {/* {console.log(item)} */}
       {/* let word = {props.location === "library" ? inBasket= true : inBasket = false} */}
+      {/* {console.log(document.querySelectorAll('.product').length)} */}
       {items.length === 0
         ? <div className="empty">No items found...</div>
         : items.map((item) => (
