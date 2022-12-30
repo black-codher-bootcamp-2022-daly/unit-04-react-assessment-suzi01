@@ -5,12 +5,18 @@ import '@testing-library/jest-dom';
 import { createMemoryHistory } from 'history';
 import About from '../pages/About';
 
+// import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
+
 describe("Components load as expected", () => {
   test('About page content', () => {
     const history = createMemoryHistory();
-    history.push('/about');
+    const navigate = useNavigate()
+    navigate('/about')
+    // history.push('/about');
+
     render(
-      <Router history={history}>
+      <Router history={navigate}>
         <About />
       </Router>,
     );

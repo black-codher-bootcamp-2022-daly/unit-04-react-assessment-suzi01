@@ -5,7 +5,7 @@ const About = () => {
     return <>
     <h1>About</h1>
     <Header />
-    <div className='header'>
+    <div className='about-body'>
         <h2>Welcome to the Bookcase Application</h2>
         <p>
             The following application was created by Suzannah. This media app displays a list 
