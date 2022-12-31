@@ -149,27 +149,27 @@ function App() {
   function Home() {
     const [term, setTerm] = useState("")
     // console.log("This", books)
-    return <>
+    return <div className='home'>
     <h1 className='title'>Media Store</h1>
     <Header itemCount={<BasketCount basketCount={basket.length} />}/>
     {/* <Search keyword={keyword} setKeyword={setKeyword} search={search}/> */}
     <Search term={term} setTerm={setTerm} search={search}/>
     {products.length === 0 && 'Sorry, no items in basket...' } 
     <ProductList items={products} location="library" addToBasket={addToBasket} removeFromBasket={removeFromBasket}/>
-  </>
+  </div>
     
   }
 
 
   function BasketList() {
     // console.log("This", basket)
-    return <>
+    return <div className='basket-list'>
             <h1 className='title'>Media Store</h1>
             <Header itemCount={<BasketCount basketCount={basket.length} />}/>
             {/* {console.log(basket)} */}
             {/* {console.log('count', count)} */}
             { <Basket basket={basket} location='basket' removeFromBasket={removeFromBasket} basketCount={count} basketTotal={total} /> }
-          </>
+          </div>
     
   }
 
