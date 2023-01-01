@@ -36,7 +36,8 @@ a {
   padding: 10px 0;
 }
 
-.header{
+.header,
+.about-links{
   font-size: 20px;
   padding-bottom: 15px;
   text-align: center;
@@ -185,4 +186,9 @@ img{
 
 .about-text{
   padding:60px 10px 20px;
+}
+
+.price{
+  font-weight: bold;
+  font-size: 20px;
 }

@@ -1,10 +1,13 @@
 import React from 'react'
-import Header from '../components/Header'
+import { Link } from 'react-router-dom'
+// import Header from '../components/Header'
 
-const About = () => {
+const About = (props) => {
     return <>
     <h1 className='title'>About</h1>
-    <Header />
+    <div className='about-links'>
+    <Link to="/" id="homelink">Home </Link>|<Link to="/about" id="aboutlink"> About </Link>|<Link to="/basket" id="basketlink"> Basket: {props.itemCount}</Link>
+    </div>
     <div className='about-body'>
         <h2 className='title'>Welcome to the Media Store </h2>
         <div className='about-text'>

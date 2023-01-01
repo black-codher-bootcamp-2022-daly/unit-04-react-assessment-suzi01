@@ -30,7 +30,7 @@ const Product = ({
         <div className="item-details">
         <h2>{trackName}</h2>
         <h2>{artistName}</h2>
-        {trackPrice ? <p>£{trackPrice}</p> : <p>-</p>}
+        {trackPrice ? <p className="price">£{trackPrice}</p> : <p>-</p>}
         
         {kind !== "song" && (
           <p className="long-description">

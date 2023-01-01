@@ -150,7 +150,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home /> } />
         <Route path="/basket" element={<BasketList />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About itemCount={<BasketCount basketCount={basket.length} />}/>} />
       </Routes>
       </div>
     </Router>
