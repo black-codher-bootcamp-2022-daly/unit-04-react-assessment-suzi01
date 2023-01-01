@@ -159,7 +159,7 @@ img{
 
 .basket-list {
   padding: 0 10px;
-  background-image: url("https://source.unsplash.com/PDX_a_82obo");
+  background-image: url("https://source.unsplash.com/7LNatQYMzm4");
   background-size: 100wh; 
   /* background-size: cover; */
   /* opacity: 0.8; */
@@ -176,9 +176,13 @@ img{
   /* background-color: pink; */
   padding: 0 10px;
   background-image: url("https://source.unsplash.com/RN9Pc8CPeEo");
-  /* background-size: 100vh; */
+  background-size: cover;
   width:100%;
   height: 700px;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.about-text{
+  padding:60px 10px 20px;
 }

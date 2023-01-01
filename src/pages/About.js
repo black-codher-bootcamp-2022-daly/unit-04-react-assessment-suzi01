@@ -7,6 +7,7 @@ const About = () => {
     <Header />
     <div className='about-body'>
         <h2 className='title'>Welcome to the Media Store </h2>
+        <div className='about-text'>
         <p>
             The following application was created by Suzannah. This media app displays a list 
             of books, videos etc that a user can save to a local basket.
@@ -19,6 +20,7 @@ const About = () => {
             <br/>
             Browse the iTunes store for media you are interested in. Add to your basket and keep track of costs.
         </p>
+        </div>
     </div>
     
 </>
