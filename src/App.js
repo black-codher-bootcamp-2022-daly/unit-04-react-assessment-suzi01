@@ -141,7 +141,7 @@ function App() {
       <div className="home">
         <h1 className="title">Media Store</h1>
         <Header itemCount={<BasketCount basketCount={basket.length} />} />
-        <Search term={term} setTerm={setTerm} findProducts={findProducts} />
+        <Search term={term} setTerm={setTerm} search={findProducts} />
         <Filter findProducts={findProducts} term={term}/>
         <Pagination increase={increase} decrease={decrease} totalItems={products.length} itemsPerPage={itemsPerPage} currentPage={currentPage} last={last} first={first} />
         {products.length === 0 && "Sorry, no items in basket..."}
