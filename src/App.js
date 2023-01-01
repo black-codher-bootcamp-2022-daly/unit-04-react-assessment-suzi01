@@ -11,6 +11,7 @@ import BasketCount from "./components/BasketCount";
 import Pagination from "./components/Pagination";
 import Filter from './components/Filter'
 
+
 function App() {
   const [products, setProducts] = useState(data);
   const [basket, setBasket] = useState([]);
@@ -19,6 +20,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [term, setTerm] = useState("");
+  const [checkedName, setCheckedName] = useState("All");
 
   const indexOfLastProduct = currentPage * itemsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
@@ -142,7 +144,7 @@ function App() {
         <h1 className="title">Media Store</h1>
         <Header itemCount={<BasketCount basketCount={basket.length} />} />
         <Search term={term} setTerm={setTerm} search={findProducts} />
-        <Filter findProducts={findProducts} term={term}/>
+        <Filter findProducts={findProducts} term={term} checkedName={checkedName} setCheckedName={setCheckedName} />
         <Pagination increase={increase} decrease={decrease} totalItems={products.length} itemsPerPage={itemsPerPage} currentPage={currentPage} last={last} first={first} />
         {products.length === 0 && "Sorry, no items in basket..."}
         <ProductList

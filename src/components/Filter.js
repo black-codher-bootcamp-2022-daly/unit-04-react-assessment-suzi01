@@ -3,13 +3,14 @@ import React, { useState } from "react";
 const Filter = ({ products, ...props }) => {
   const options = ["All", "song", "tv-episode", "feature-movie"];
 
-  const [checkedName, setCheckedName] = useState("all");
+//   const [checkedName, setCheckedName] = useState("All");
   const [selectedValue, setSelectedValue] = useState("all");
 
   const handleFilterInput = (event) => {
+    event.preventDefault()
     //    console.log(event.target.value)
     console.log(selectedValue);
-    setCheckedName(event.target.value);
+    props.setCheckedName(event.target.value);
     let entity = event.target.value;
     // let value = event.target.value;
     setSelectedValue(entity);
@@ -33,7 +34,7 @@ const Filter = ({ products, ...props }) => {
           id="all"
           type="radio"
           value="all"
-          checked={checkedName === "all"}
+          checked={props.checkedName === "all"}
         />
         <label htmlfor="All">All</label>
       </div>
@@ -45,7 +46,7 @@ const Filter = ({ products, ...props }) => {
           id="movie"
           type="radio"
           value="movie"
-          checked={checkedName === "movie"}
+          checked={props.checkedName === "movie"}
         />
         <label htlmfor="movie">Movie</label>
       </div>
@@ -57,7 +58,7 @@ const Filter = ({ products, ...props }) => {
           id="music"
           type="radio"
           value="song"
-          checked={checkedName === "song"}
+          checked={props.checkedName === "song"}
         />
         <label htmlfor="music">Music</label>
       </div>
@@ -69,7 +70,7 @@ const Filter = ({ products, ...props }) => {
           id="tv Show"
           type="radio"
           value="tvShow"
-          checked={checkedName === "tv-Show"}
+          checked={props.checkedName === "tv-Show"}
         />
         <label htmlfor="tv show">TV Show</label>
       </div>
@@ -81,7 +82,7 @@ const Filter = ({ products, ...props }) => {
           id="ebook"
           type="radio"
           value="ebook"
-          checked={checkedName === "ebook"}
+          checked={props.checkedName === "ebook"}
         />
         <label htmlfor="ebook">Ebook</label>
       </div>
