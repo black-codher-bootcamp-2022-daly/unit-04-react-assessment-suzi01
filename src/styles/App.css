@@ -1,29 +1,23 @@
 * {
   box-sizing: border-box;
-  padding:0;
   margin: 0;
-  /* text-align: center; */
+  padding: 0;
 
+  /* text-align: center; */
 }
 
-body{
+body {
   background-color: #f8e6f7;
 }
 
-
+/* container of routes */
 .container {
   width: 90%;
   margin: auto;
   padding: 0 10px;
-  /* background-image: url("https://source.unsplash.com/PDX_a_82obo");
-  background-size: 100%; */
-  /* opacity: 0.8; */
-  /* background-image: url("https://source.unsplash.com/ta7rN3NcWyM");
-  background-size: cover; */
-  /* background-color: aqua; */
-  /* background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') */
 }
 
+/* links in header */
 a {
   text-decoration: none;
   color: black;
@@ -31,57 +25,56 @@ a {
   align-items: center;
 }
 
+/* title at top of page */
 .title {
   text-align: center;
   padding: 10px 0;
 }
 
 .header,
-.about-links{
+.about-links {
   font-size: 20px;
   padding-bottom: 15px;
   text-align: center;
 }
 
+/* for search componenent */
 #searchAPI {
-  align-content:'center';
-  text-align: 'center';
-  padding:"5px"
+  align-content: "center";
+  text-align: "center";
+  padding: "5px";
 }
 
-form{
+form {
   border-bottom: 1px solid;
+  align-content: center;
+  text-align: center;
 }
 #searchBar {
-  border-radius: 5px; 
-  width:75%;
-  height:28px;
-  background-color:white;
+  border-radius: 5px;
+  width: 75%;
+  height: 38px;
+  background-color: white;
   margin-bottom: 10px;
   padding: 2px 10px;
 }
 
-input {
-  border-radius:5px;
+input{
+  border-radius: 5px;
   border: solid 1px;
-  min-width:5px;
+  min-width: 5px;
   /* margin-right: 10px; */
-  height:28px;
-  background-color:#2596be;
-  
+  height: 38px;
+  background-color: #2596be;
 }
 
-.search-btn{
+.search-btn {
   padding: 5px 25px;
   color: #fff;
   margin-left: 10px;
 }
 
-form{
-  /* background-color: red; */
-  align-content: center;
-  text-align: center;
-}
+/* for product component */
 
 .product {
   display: flex;
@@ -89,62 +82,58 @@ form{
   padding-bottom: 5px;
   border-bottom: 1px solid;
   align-items: center;
-
 }
 
-  .add-button,
-  .close-button {
-    /* float: right; */
-    border-radius: 5px;
-    border: 1px solid;
-    padding: 10px;
-    background-color: white;
-    width: 70px;
-    margin-left: 5px;
-  }
+.add-button,
+.remove-button {
+  /* float: right; */
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 10px;
+  background-color: white;
+  width: 70px;
+  margin-left: 5px;
+}
 
-
-
-.item-details{
-  padding: 0 10px;
-  width:80%;
-  line-height: 35px;
-  /* color:#09506a; */
-  /* text-align: left; */
-  /* background-color: white;
-  /* From https://css.glass */
-  /* background: rgba(255, 255, 255, 0.24); */
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.9px);
-  -webkit-backdrop-filter: blur(7.9px);
-  border: 1px solid rgba(255, 255, 255, 0.3); 
-}  
-
-.add-button:hover{
+.add-button:hover {
   background-color: black;
   color: white;
 }
 
-.long-description{
+.remove-button:hover {
+  background-color: #b33737;
+  color: white;
+}
+
+.item-details {
+  padding: 0 10px;
+  width: 80%;
+  line-height: 35px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.long-description {
   line-height: 20px;
 }
 
-img{
-  width:100px;
+img {
+  width: 100px;
   margin-right: 5px;
 }
 
-.empty{
+.empty {
   padding: 5px 0;
 }
 
-.total{
-  padding:10px 0;
+.total {
+  padding: 10px 0;
   text-align: center;
-  color:#fff;
+  color: #fff;
   font-size: 35px;
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0.24);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -153,42 +142,93 @@ img{
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.close-button:hover{
-  background-color: #b33737;
-  color: white;
-}
-
+/* background for basketlist component */
 .basket-list {
   padding: 0 10px;
   background-image: url("https://source.unsplash.com/7LNatQYMzm4");
-  background-size: 100wh; 
+  background-size: 100wh;
   /* background-size: cover; */
   /* opacity: 0.8; */
 }
 
-.home{
-  /* background-color: pink; */
+/* background for home component */
+.home {
   padding: 0 10px;
   background-image: url("https://source.unsplash.com/yPZQAzuySJk");
-  background-size: 100vw; 
+  background-size: 100vw;
 }
 
+/* background for About component */
 .about-body {
-  /* background-color: pink; */
   padding: 0 10px;
   background-image: url("https://source.unsplash.com/RN9Pc8CPeEo");
   background-size: cover;
-  width:100%;
+  width: 100%;
   height: 700px;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.about-text{
-  padding:60px 10px 20px;
+.about-text {
+  padding: 60px 10px 20px;
 }
 
-.price{
+.price {
   font-weight: bold;
   font-size: 20px;
+}
+
+/* pagination */
+.pagination {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.pagination h2 {
+  padding-bottom: 15px;
+}
+
+.container-buttons {
+  display: flex;
+  /* background-color: red; */
+  justify-content: space-around;
+}
+
+.container-buttons button {
+  padding: 8px 10px;
+  margin-left: 4px;
+  border-radius: 5px;
+  border: 1px solid;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.container-buttons button:hover {
+  background-color:#87d0df ;
+  color:#e9eae4;
+}
+
+
+/* radio buttons for filter component */
+.radio-buttons{
+  /* margin: auto; */
+  text-align: center;
+  justify-content: center;
+  padding:10px 5px;
+  display: flex;
+}
+
+.radio-buttons label{
+  padding: 0 8px;
+  /* background-color: #b33737; */
+  display: block;
+
+}
+
+.radio-btn{
+  text-align: center;
+}
+
+.radio-buttons input{
+  padding: 0 5px;
 }

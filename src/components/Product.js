@@ -46,7 +46,7 @@ const Product = ({
             Add to Basket
           </button>
         ) : (
-          <button className="close-button" onClick={() => props.removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
+          <button className="remove-button" onClick={() => props.removeFromBasket(trackId ? trackId : artistId)}>Remove</button>
         )}
         </div>
 </>
