@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Filter = ({ products, ...props }) => {
-  const options = ["All", "song", "tv-episode", "feature-movie"];
+  // const options = ["All", "song", "tv-episode", "feature-movie"];
 
 //   const [checkedName, setCheckedName] = useState("All");
   const [selectedValue, setSelectedValue] = useState("all");

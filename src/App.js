@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import "./styles/App.css";
 import data from "./models/data.json";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -18,7 +18,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [total, setTotal] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [itemsPerPage] = useState(10);
   const [term, setTerm] = useState("");
   const [checkedName, setCheckedName] = useState("All");
 
