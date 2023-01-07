@@ -3,8 +3,8 @@ import BasketCount from "./BasketCount";
 import BasketTotal from "./BasketTotal";
 import Product from "./Product";
 
-const Basket = ({ basket, ...props }) => {
-  const { location, basketCount, basketTotal, removeFromBasket } = props;
+const Basket = ({ basket, location, basketCount, basketTotal, removeFromBasket }) => {
+  // const { location, basketCount, basketTotal, removeFromBasket } = props;
   // const { basketTotal} = total
   // console.log('basket', basket)
   // console.log('props',basketTotal)
