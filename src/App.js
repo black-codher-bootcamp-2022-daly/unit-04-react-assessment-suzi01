@@ -85,6 +85,7 @@ function App() {
 
         product.inBasket = !product.inBasket;
       }
+      return product
     });
     setBasket(newData);
     setCount(count - 1);
